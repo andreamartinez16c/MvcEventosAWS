@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MvcEventosAWS.Models.CategoriaEvento>
+
+@{
+    ViewData["Title"] = "Categorias";
+}
+
+<h1>Categorias</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                    <a asp-action="EventosPorCategoria" asp-route-idcategoria="@item.IdCategoria" class="btn btn-info">Ver Eventos</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
