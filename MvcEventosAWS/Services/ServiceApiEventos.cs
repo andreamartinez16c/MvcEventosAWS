@@ -8,10 +8,9 @@ namespace MvcEventosAWS.Services
         private string UrlApi;
         private MediaTypeWithQualityHeaderValue header;
 
-        public ServiceApiEventos(IConfiguration configuration)
+        public ServiceApiEventos(KeysModel keys)
         {
-            this.UrlApi = configuration.GetValue<string>
-                ("ApiUrls:ApiEventosAWS");
+            this.UrlApi = keys.ApiEventos;
             /*this.UrlApi = keys.ApiPersonajes;*/
             this.header = new MediaTypeWithQualityHeaderValue
                 ("application/json");
