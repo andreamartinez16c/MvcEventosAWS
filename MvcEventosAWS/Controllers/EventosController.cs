@@ -7,10 +7,13 @@ namespace MvcEventosAWS.Controllers
     public class EventosController : Controller
     {
         private ServiceApiEventos service;
+        private ServiceStorageAWS serviceStorage;
 
-        public EventosController(ServiceApiEventos service)
+        public EventosController(ServiceApiEventos service, ServiceStorageAWS serviceStorage)
         {
             this.service = service;
+            this.serviceStorage = serviceStorage;
+
         }
         public async Task<IActionResult> Index()
         {

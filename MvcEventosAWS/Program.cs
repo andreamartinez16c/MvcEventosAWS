@@ -1,8 +1,11 @@
+using Amazon.S3;
 using MvcEventosAWS.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAWSService<IAmazonS3>();
+builder.Services.AddTransient<ServiceStorageAWS>();
 builder.Services.AddTransient<ServiceApiEventos>();
 builder.Services.AddControllersWithViews();
 
